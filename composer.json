@@ -1,0 +1,48 @@
+{
+    "name": "danimurcia/responses",
+    "version": "0.0.1",
+    "description": "Package to work with http responses",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dani Murcia",
+            "email": "danijmurcia@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+
+    "require-dev": {
+        "laravel/pint": "dev-main",
+        "phpunit/phpunit": "9.5.x-dev",
+        "orchestra/testbench": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "danimurcia\\responses\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "danimurcia\\responses\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit",
+        "lint": "./vendor/bin/pint"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "danimurcia\\responses\\MacroServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "illuminate/support": "^8.0|^9.0"
+    }
+}
